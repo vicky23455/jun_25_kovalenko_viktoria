@@ -1,2 +1,119 @@
+.body {
+  color: #2f4f4f;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+}
 
+.people {
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 305px 197px;
+  display: grid;
+}
+
+.person {
+  background: none;
+  width: 200px;
+  padding: 0;
+  transition: transform .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo {
+  margin: 0 auto;
+  transition: border-radius .5s 1s, width .3s, height .3s;
+  display: block;
+  position: relative;
+}
+
+.img {
+  object-fit: cover;
+  border-radius: 50%;
+  gap: 30px;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.rank {
+  color: #8b0000;
+  background-color: #fff;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+}
+
+.details {
+  text-align: center;
+  padding-top: 8px;
+}
+
+.extra {
+  color: #000;
+  opacity: 0;
+  margin-top: 6px;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 100%;
+  transition: opacity .3s;
+  display: none;
+}
+
+.person:hover {
+  cursor: pointer;
+  z-index: 10;
+  background-color: #eee;
+  border-radius: 4%;
+  padding: 12px;
+  transition: background-color .3s, padding .3s;
+  transform: scale(1.2);
+}
+
+.person:hover .extra {
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  display: block;
+}
+
+.person:hover .photo img.img {
+  border-radius: 60px;
+}
+
+@media (width <= 500px) {
+  .people {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width >= 501px) and (width <= 750px) {
+  .people {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 751px) and (width <= 1000px) {
+  .people {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width >= 1001px) {
+  .people {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 /*# sourceMappingURL=jun_25_kovalenko_viktoria.b1276d39.css.map */
