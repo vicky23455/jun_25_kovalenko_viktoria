@@ -1,1 +1,132 @@
+.body {
+  margin: 0;
+  padding: 0;
+  color: #2F4F4F;
+  background-color: #fff;
 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.people {
+  display: grid;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
+  padding: 30px 305px 197px;
+}
+
+.person {
+  width: 200px;
+  background: transparent;
+  padding: 0;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.3s ease;
+}
+
+.photo {
+  position: relative;
+  display: grid;
+  transition:
+  border-radius 0.5s ease 1s,
+  width 0.3s ease,
+  height 0.3s ease;
+  display: block;
+  margin: 0 auto;;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.rank {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+
+  height: 32px;
+  width: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #8B0000;
+}
+
+.details {
+  padding-top: 8px;
+  text-align: center;
+}
+
+.extra {
+  display: none;
+  font-size: 14px;
+  color: #333;
+  margin-top: 6px;
+
+  font-size: 21px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 100%;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.person:hover {
+  cursor: pointer;
+  background-color: #EEEEEE;
+  border-radius: 4%;
+  padding: 12px;
+  transform: scale(120%);
+  z-index: 10;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.person:hover .extra {
+  display: block;
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.person:hover .photo img.img {
+  border-radius: 60px;
+}
+
+@media (max-width: 500px) {
+  .people {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 750px) {
+  .people {
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+@media (min-width: 751px) and (max-width: 1000px) {
+  .people {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media (min-width: 1001px) {
+  .people {
+    grid-template-columns: repeat(4, 1fr);
+}
+}
